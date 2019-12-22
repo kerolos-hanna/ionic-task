@@ -1,4 +1,16 @@
 <ion-content>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title> {{name}} </ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button color='dark'></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+    <img *ngIf="data1==1" class="special" src="../../../assets/img5.png" alt="" />
+    <img *ngIf="data1==2" class="special" src="../../../assets/img6.png" alt="" />
+    <img *ngIf="data1==3" class="special" src="../../../assets/img7.png" alt="" />
+    <img *ngIf="data1==4" class="special" src="../../../assets/img8.png" alt="" />
+  </ion-header>
   <ion-grid>
     <ion-row>
       <ng-container *ngFor="let product of products; let i = index">

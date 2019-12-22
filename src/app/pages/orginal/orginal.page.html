@@ -1,15 +1,29 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button color='dark'></ion-menu-button>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <img src="/assets/img4.png" alt="" />
-  <app-categories></app-categories>
+  <img class="special" src="/assets/img4.png" alt="" />
+  <ion-grid>
+    <ion-row>
+      <ng-container *ngFor="let result of results; let i = index">
+        <ion-col size="6">
+          <ion-label (click)='goToDetails(result.id)'>
+            <div>
+              <img [src]="result.category_img" alt="">
+              <ion-card-title>{{result.name}}</ion-card-title>
+            </div>
+          </ion-label>
+        </ion-col>
+        <div *ngIf="(i+1)%2 === 0" class="w-100"></div>
+      </ng-container>
+    </ion-row>
+  </ion-grid>
 
 
 </ion-content>
