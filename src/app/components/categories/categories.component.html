@@ -1,0 +1,17 @@
+
+<ion-grid>
+  <ion-row >
+    <ng-container *ngFor="let result of results; let i = index">
+      <ion-col size="6">
+        <ion-label (click)='goToDetails(result.id)'>
+          <div>
+            <img [src]="result.category_img" alt=""> 
+            <ion-card-title>{{result.name}}</ion-card-title>
+          </div>
+        </ion-label>
+      </ion-col>
+        <div *ngIf="(i+1)%2 === 0" class="w-100"></div>
+    </ng-container>
+  </ion-row>
+</ion-grid>
+

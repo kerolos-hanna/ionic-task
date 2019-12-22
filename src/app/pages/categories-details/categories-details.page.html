@@ -1,0 +1,18 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ng-container *ngFor="let product of products; let i = index">
+        <ion-col size="6">
+          <div>
+            <img [src]="product.product_img" alt="">
+            <ion-card-title>{{product.name}}</ion-card-title>
+            <ion-card-subtitle>{{product.weight}}</ion-card-subtitle>
+            <ion-card-subtitle>{{product.price}}</ion-card-subtitle>
+          </div>
+        </ion-col>
+        <div *ngIf="(i+1)%2 === 0" class="w-100"></div>
+      </ng-container>
+    </ion-row>
+  </ion-grid>
+  <app-cat-details></app-cat-details>
+</ion-content>
